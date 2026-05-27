@@ -1,0 +1,8 @@
+name: custom-java-security
+version: 0.1.0
+description: Custom Java security queries for unified audit
+groups:
+  - java
+  - security
+dependencies:
+  codeql/java-all: "*"

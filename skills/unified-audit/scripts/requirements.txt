@@ -1,0 +1,2 @@
+# unified-audit has no external dependencies beyond Python stdlib
+# PyYAML and Jinja2 are only needed by jar-audit-agent

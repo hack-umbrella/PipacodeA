@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+*.pyo
+.jar
+jar-analyzer.db
+jar-analyzer-temp/
+.in_use
+logs/
+*.log
+.DS_Store
+Thumbs.db
+skills/jar-audit-agent/runs/
+skills/jar-audit-agent/engine/graph_cache/

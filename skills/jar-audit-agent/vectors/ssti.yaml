@@ -1,0 +1,41 @@
+id: ssti
+name: Template Injection / Expression evaluation
+discovery:
+  rule_sources:
+    vulnerability_keys:
+      - "SpEL.getValue"
+      - "OGNL.getValue"
+      - "FreeMarker"
+      - "JEXL"
+      - "MVEL"
+      - "QLExpress"
+      - "Rhino.eval"
+      - "Aviator.execute"
+  sinks:
+    - {class: "org/springframework/expression/ExpressionParser", method: "parseExpression", desc: null, level: high}
+    - {class: "org/springframework/expression/Expression", method: "getValue", desc: null, level: high}
+    - {class: "ognl/Ognl", method: "getValue", desc: null, level: high}
+    - {class: "freemarker/template/Template", method: "process", desc: null, level: high}
+    - {class: "org/apache/commons/jexl3/JexlEngine", method: "createExpression", desc: null, level: high}
+    - {class: "org/mvel2/MVEL", method: "eval", desc: null, level: high}
+    - {class: "com/ql/util/express/ExpressRunner", method: "execute", desc: null, level: high}
+    - {class: "org/mozilla/javascript/Script", method: "exec", desc: null, level: high}
+    - {class: "com/googlecode/aviator/AviatorEvaluator", method: "execute", desc: null, level: high}
+reduce:
+  max_candidates: 200
+  exclude_class_prefixes:
+    - "java/"
+    - "javax/"
+    - "org/springframework/"
+    - "org/apache/"
+  prefer_app_prefix: true
+reachability:
+  max_depth: 12
+evidence:
+  engine: fernflower
+  max_chars: 6000
+  window_lines: 25
+batch:
+  size: 5
+
+
