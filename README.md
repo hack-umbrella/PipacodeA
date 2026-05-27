@@ -3,6 +3,37 @@
 基于 [jar-analyzer](https://github.com/jar-analyzer/jar-analyzer) + CodeQL 的 Claude Code 插件，
 用于 Java JAR/WAR 包静态分析与安全审计。
 
+## 安装
+
+### 方式一：Git Clone（推荐）
+
+```bash
+# 克隆到 Claude Code 插件目录
+mkdir -p ~/.claude/plugins
+git clone https://github.com/hack-umbrella/PipacodeA.git ~/.claude/plugins/PipacodeA
+
+# 全局配置启用插件（编辑 ~/.claude/settings.json）
+{
+  "enabledPlugins": {
+    "PipacodeA@jar-analyzer-marketplace": true
+  },
+  "permissions": {
+    "allow": [
+      "Bash(java *)",
+      "Bash(python3 *)",
+      "Bash(codeql *)",
+      "Bash(sqlite3 *)"
+    ]
+  }
+}
+```
+
+### 方式二：Marketplace 安装
+
+在 Claude Code 中运行 `/plugin` → Install Plugin → 搜索 `PipacodeA`
+
+> 如果 marketplace 未收录，请先添加源：`/plugin` → Manage Marketplaces → 添加 `https://github.com/hack-umbrella/PipacodeA.git`
+
 ## 功能
 
 - **双引擎统一审计**：jar-analyzer 全局调用图 + CodeQL 精确污点分析，交叉验证降低误报
