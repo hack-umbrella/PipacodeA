@@ -1,0 +1,16 @@
+{
+  "name": "PipacodeA Marketplace",
+  "description": "PipacodeA — jar-analyzer + CodeQL unified Java security audit plugin for Claude Code",
+  "owner": {
+    "name": "hack-umbrella",
+    "url": "https://github.com/hack-umbrella"
+  },
+  "plugins": [
+    {
+      "name": "PipacodeA",
+      "description": "jar-analyzer + CodeQL dual-engine Java vulnerability analysis (RCE/SQLi/SSRF/deser/XSS/XXE/LFI/JNDI/SSTI)",
+      "version": "1.1.0",
+      "path": "."
+    }
+  ]
+}
